@@ -1,6 +1,6 @@
 # Learn-Anywhere-Anytime
 
-This is our project for Software Engineering 1. Made by 
+This is our project for Software Engineering 2. Made by 
 
 Mohammed Muflih AlMuflih 442017012
 
