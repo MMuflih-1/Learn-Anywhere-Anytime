@@ -1,0 +1,23 @@
+{
+  "description": "PACKAGES INISTALL \r 1- express -> to host my files\r 2- --save nodemon -> to automatically restart the server whenever i change the code\r 3- hbs -> for if statment in html\r 4- mysql\r 5- dotenv -> to encrpty the data\r 6- bycryptjs -> to encrypt the password (hash the passwords)",
+  "name": "test",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "abbrev": "^1.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Mohammed Muflih AlMuflih",
+  "license": "ISC"
+}

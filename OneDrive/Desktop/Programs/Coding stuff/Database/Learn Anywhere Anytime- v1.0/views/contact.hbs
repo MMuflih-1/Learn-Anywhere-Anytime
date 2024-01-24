@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+								<!--WEBSITE ICON-->
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<title>Learn Anywhere Anytime!</title>
+	<style>
+		#map {
+			position: absolute !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+			
+		}
+
+		.logo {
+			color: #fff !important;
+		}
+
+		.contact-us p {
+			display: flex;
+			position: relative;
+			margin-left: 44%;
+		}
+
+		section {
+		height: 91vh !important;
+		}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+	<header>
+		<div class = "logo">Learn Anywhere Anytime</div>
+		<div class = "toggle"></div>
+		<div class = "nav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/courses">Courses</a></li>
+			<li><a href="/forum">Discussion Board</a></li>
+			<li><a href="/news">News</a></li>
+			<li><a href="/aboutus">About Us</li>
+			<li><a href="/contact">Contact</a></li>
+
+		</ul>
+
+			
+			<a href="/maintenance" class = "trophy-icon" ><img src="/images/trophy.jpg"> </a>
+		</div>
+	</header>
+		<section class = "title-contact">
+			<div class = "contact">
+				<div class = "contact-form">
+					<form class = "contact-us">
+						<span><p style="font-size: 2.5rem; color: rgba(34,177,76,1); font-weight:bolder">Contact us!</p> </span>
+						<p style="font-size: 1.1rem;">Please provide your correct infromation below</p>
+						<div class = "row">
+							
+							<div class = "input50">
+								
+								<input type="text" name="contact" placeholder="First Name" required>
+							</div>
+							<div class = "input50">
+								<input type="text" name="contact" placeholder="Last Name" required>
+							</div>
+						</div>
+						<div class = "row">
+							<div class = "input50">
+								<input type="text" name="contact" placeholder="Email" required>
+							</div>
+							<div class = "input50">
+								<input type="text" name="contact" placeholder="Subject" required>
+							</div>
+						</div>
+						<div class = "row">
+						<div class = "input100">
+							<textarea placeholder="Message" required></textarea>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "input100">
+							<button type="submit">Submit</Button>
+						</div>
+					</div>
+					</form>
+				</div>
+				
+
+				<div class = "contact-info">
+					<div class= "info-box">
+						<img src="/images/email2.png" class = "contact-icon">
+						<div class = "details">
+							<h4>Email</h4>
+							<a style="font-size: 20px;" href="mailto:442017012@imamu.edu.sa" target = "_blank">442017012@sm.imamu.edu.sa</a>
+							<a href="mailto:442017012@imamu.edu.sa" target = "_blank"></a>
+						</div>
+					</div>
+
+					
+
+					<div class= "info-box">
+						<img src="/images/address.png" class = "contact-icon">
+						<div class = "details">
+							<h4>Adress</h4>
+							<p>Riyadh</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class = "main-foot">
+		<nav class = "footer-social">
+			<a href="https://facebook.com"><i class = "fa-brands fa-facebook"></i></a>
+			<a href="https://x.com"><i class = "fa-brands fa-twitter"></i></a>
+			<a href="https://instagram.com"><i class = "fa-brands fa-instagram"></i></a>
+			<a href="https://youtube.com"><i class = "fa-brands fa-youtube"></i></a>
+		</nav>
+			<nav class = "footer-nav">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/news">News</a></li>
+					<li><a href="/legal">Legal</a></li>
+					<li><a href="/aboutus">About</a></li>
+					<li><a href="/courses">Content</a></li>
+					<li><a href="/team">Our Team</a></li>
+				</ul>
+			</nav>
+			<div class="footer-bottem">
+				<p class="footer-heart">
+  				Copyright &copy; 2024; Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+				<img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"></g-emoji> by <a href="https://github.com/MMuflih-1">MMuflih</a>
+				</p>
+			</div>
+	</footer>
+		</div>
+	
+	<script>
+    const toggle = document.querySelector('.toggle')
+    const nav = document.querySelector('.nav')
+
+    toggle.addEventListener('click', function(){
+        toggle.classList.toggle('active');
+	    nav.classList.toggle('active');
+    });
+
+</script>
+<script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 24.7136, lng: 46.6753}, // Riyadh coordinates
+        zoom: 12, draggable: true,
+        
+      });
+    }
+  </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+
+</body>
+</html>

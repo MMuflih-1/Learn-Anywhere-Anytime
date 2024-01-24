@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Forums</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+		<div class = "logo">Learn Anywhere Anytime</div>
+		<div class = "toggle"></div>
+		<div class = "nav">
+            
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/courses">Courses</a></li>
+			<li><a href="/forum">Discussion Board</a></li>
+            <li><a href="/news">News</a></li>
+			<li><a href="/aboutus">About Us</li>
+			<li><a href="/contact">Contact</a></li>
+
+		</ul>
+
+			<a href="/maintenance" class = "trophy-icon"><img src="/images/trophy.jpg"> </a>
+		</div>
+	</header>
+    
+    <div class="top-bar">
+        <h1 style="text-align: center;">Forums</h1>
+
+    </div>
+    <div class="main">
+    <div class="header">
+    <h4 class="title">
+        
+    </h4>
+    <div class="bottem">
+        <p class="timestamp">
+            
+
+        </p>
+        <p class="comment-count">
+            
+        </p>
+        </div>
+    </div>
+    
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button style="color: white;">Post comment</button>
+    <div class="comments">
+        <div class="comment">
+                
+        </div>
+
+       
+
+    </div>
+    </div>
+    </div>
+    <script src="forums_app.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        var userName = "{{user.name}}";
+        console.log(userName)
+        console.log(threads);
+        
+        
+        var id = window.location.search.slice(1);
+        console.log(id);
+        var thread = threads.find(t => t.id == id);
+        console.log(thread);
+        var header = document.querySelector('.header');
+        var headerHtml = `
+        <h4 class="title">
+            ${thread.contents}
+        </h4>
+        <div class="bottem">
+            <p class="timestamp">
+                ${thread.author} - 
+                ${new Date(thread.date).toLocaleString()}
+
+            </p>
+            <p class="comment-count">
+                ${thread.comments.length} comments
+            </p>
+            </div>
+        `
+        header.insertAdjacentHTML('beforeend',headerHtml);
+        
+        function addComment(comment) {
+            var commentHtml = `
+            <div class="comment">
+                <div class="top-comment">
+                <p class="user">${comment.author}</p>
+                <p class="comment-timestamp">
+                    ${new Date(comment.date).toLocaleString()}
+                </p>
+                </div>
+            <div class="comment-content">
+            ${comment.content}
+            </div>
+
+        </div>`
+
+        comments.insertAdjacentHTML('beforeend', commentHtml);
+        }
+        var comments = document.querySelector('.comments');
+        for(let comment of thread.comments){
+            addComment(comment);
+        }
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function (){
+            var author = prompt('Enter your name:');
+            var txt = document.querySelector('textarea');
+            var comment = {
+                content: txt.value,
+                date: Date.now(),
+                author: author,
+            }
+            addComment(comment);
+            txt.value = ''
+            thread.comments.push(comment);
+            localStorage.setItem('threads',JSON.stringify(threads));
+        })
+    </script>
+
+
+    <style>
+
+        body {
+            margin: 6% 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        h1, h4, ol {
+            margin: 0;
+        }
+
+        .title {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .top-bar {
+            background-color: skyblue;
+            padding: 0 40px;
+        }
+
+        .row {
+            padding: 5px 0;
+        }
+
+        textarea {
+            width: 80%;
+            height: 80px;
+        }
+        button {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .comments {
+            margin: 40px 0;
+        }
+
+        .comment {
+            margin: 10px 0;
+        }
+
+        .main {
+            background-color: #F6F6EF;
+            padding: 10px 40px;
+        }
+        
+        .bottom, .top-comment {
+            display: flex;
+            color: grey;
+            font: 12px;
+        }
+        .timestamp {
+            padding-right:10px ;
+            font-size: 1rem;
+        }
+
+        .comment-timestamp {
+            margin-left: 5px;
+        }
+
+        button {
+            background-color: rgba(34,177,76,1);
+            text-decoration: none;
+            padding: .5%;
+            margin: 20px 0;
+            cursor: pointer;
+            border: 0;
+        }
+
+        button:hover {
+            background-color: rgba(27, 140, 61, 0.9);
+        }
+
+        .comment-content {
+            font-size: 1.3rem;
+        }
+
+        #newThreadBtn:hover {
+            background-color: rgba(27, 140, 61, 0.9);
+        }
+    </style>
+</body>
+</html>
