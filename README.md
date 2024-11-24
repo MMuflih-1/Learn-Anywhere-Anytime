@@ -3,17 +3,10 @@
 
 This is our project for Software Engineering 2. Made by 
 
-Mohammed Muflih Almuflih 442017012
+Mohammed Muflih Almuflih
 
-Faisal Bandar Alkharaan 443015379
+Faisal Bandar Alkharaan
 
-Saad Abdulrhaman Almugrin 443014496
-
-Mazen Abdulrhaman Aljohani 443018439
-
-Muhannad Abdulaziz Alosaili 442017133
-
-Yosef Mohamed Alrashed 443015627
 
 ```diff
 - NOTE
